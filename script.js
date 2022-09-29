@@ -9,11 +9,9 @@ var currentTime = Number(
 );
 const container = document.getElementsByClassName("container");
 // Save button
-
-//append to current date
-let documentDate = document.getElementById("currentDay");
-documentDate.textContent =
-  days[weekday] + ", " + months[month] + " " + today.getDate() + " " + year;
+function isSaveButton(event) {
+  return event.target.matches("button") || event.target.matches(".fa-save");
+}
 //local storage
 let savedData = JSON.parse(localStorage.getItem("savedData"));
 if (!savedData) {
